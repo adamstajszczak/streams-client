@@ -23,6 +23,11 @@ constructor(props) {
         this.buildPlayer();
     }
 
+    componentWillUnmount() {
+        // console.log('I am unmounted!');
+        this.player.destroy();
+    }
+
     buildPlayer() {
         if (this.player || !this.props.stream) {
             return;
